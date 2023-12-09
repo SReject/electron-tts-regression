@@ -1,0 +1,9 @@
+{
+    "private": true,
+    "scripts": {
+        "start": "electron app.js"
+    },
+    "dependencies": {
+        "electron": "^12.2.2"
+    }
+}

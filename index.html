@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <pre id="result"></pre>
+        <script>
+            const ele = document.getElementById('result');
+            speechSynthesis.addEventListener('voiceschanged', () => {
+                const voices = window.speechSynthesis.getVoices().map(voice => {
+                    return {
+                        default: voice.default,
+                        lang: voice.lang,
+                        localService: voice.localService,
+                        voiceURI: voice.voiceURI,
+                    }
+                });
+                ele.innerText += JSON.stringify(voices, null, 4);
+            });
+        </script>
+    </body>
+</html>
